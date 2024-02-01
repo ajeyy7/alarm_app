@@ -12,6 +12,10 @@ class AlarmTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    ///alrm Tile
+
     return ListTile(
       title: Container(
         height: 90,
@@ -37,6 +41,7 @@ class AlarmTile extends StatelessWidget {
               SizedBox(width: 10),
               Row(
                 children: [
+                  ///switch
                   Switch(
                     value: alarm.isEnabled,
                     onChanged: (value) {
@@ -44,6 +49,7 @@ class AlarmTile extends StatelessWidget {
                       Hive.box<Alarm>('alarms').putAt(alarm.key, alarm);
                     },
                   ),
+                  ///delete button
                   IconButton(
                     icon: Icon(
                       Icons.delete,

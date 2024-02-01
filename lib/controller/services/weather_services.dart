@@ -5,6 +5,7 @@ import "package:geolocator/geolocator.dart";
 import "package:http/http.dart" as http;
 
 import "../../model/whether_model.dart";
+///weather api function
 
 class WeatherService {
   static const Url = "http://api.openweathermap.org/data/2.5/weather";

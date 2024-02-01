@@ -11,6 +11,8 @@ class WeatherContainer extends StatefulWidget {
 }
 
 class _WeatherContainerState extends State<WeatherContainer> {
+  ///weather api
+
   final _weatherService = WeatherService("958d42d5c1d4718d1303c04c6fe6da86");
 
   Weather? _weather;
@@ -38,6 +40,9 @@ class _WeatherContainerState extends State<WeatherContainer> {
   Widget build(BuildContext context) {
     return
       _weather==null ? const CircularProgressIndicator():
+
+          ///weather container
+
       Container(
       height: 240,
       width: 380,

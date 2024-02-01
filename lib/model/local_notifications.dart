@@ -35,6 +35,7 @@ class LocalNoti {
   }
 
   /// to show the alarm notification
+  /// and to play notification tune
 
   static Future showAlarmNotification({
     required String title,
@@ -42,9 +43,11 @@ class LocalNoti {
     required String payload,
   }) async {
     const AndroidNotificationDetails androidNotificationDetails =
-        AndroidNotificationDetails('your channel id', 'your channel name',
-            channelDescription: 'your channel description',
+        AndroidNotificationDetails('channel id', 'channel name',
+            channelDescription: 'channel description',
             importance: Importance.max,
+            playSound: true,
+            sound: RawResourceAndroidNotificationSound("alarmtune"),
             priority: Priority.high,
             ticker: 'ticker');
     const NotificationDetails notificationDetails =

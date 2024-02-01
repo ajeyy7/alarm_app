@@ -33,6 +33,11 @@ class _HomePageState extends State<HomePage> {
             child: SizedBox(
               width: double.infinity,
               //   height: MediaQuery.of(context).size.width,
+
+
+              ///weather container
+
+
               child:
                   Align(alignment: Alignment.center, child: WeatherContainer()),
             ),
@@ -49,6 +54,11 @@ class _HomePageState extends State<HomePage> {
                         topLeft: Radius.circular(36),
                       ),
                     ),
+
+
+
+                    ///alrm listtile
+
                     child: ListView.builder(
                       itemCount: _alarmBox.length,
                       itemBuilder: (context, index) {
@@ -76,6 +86,8 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+///function for adding alarm
+
 
   void _addAlarm() async {
     TimeOfDay? selectedTime = await showTimePicker(
@@ -93,6 +105,11 @@ class _HomePageState extends State<HomePage> {
       setState(() {});
     }
   }
+
+
+  ///to schedule notification
+
+
   void _scheduleNotification(Alarm alarm)async {
     // Create a DateTime object for the user-selected time
     DateTime triggerDateTime = DateTime(
@@ -119,6 +136,8 @@ class _HomePageState extends State<HomePage> {
 
 
   }
+///to delete notification
+
 
   void _deleteAlarm(int index) {
     _alarmBox.deleteAt(index);
